@@ -1,0 +1,48 @@
+{
+  "name": "@seayu/utils",
+  "type": "module",
+  "version": "0.0.0",
+  "description": "some of JavaScript / TypeScript utils",
+  "author": "seayu",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sea-yu/utils.git"
+  },
+  "bugs": "https://github.com/sea-yu/utils/issues",
+  "keywords": [],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.js"
+    }
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "run": "esno src/index.ts",
+    "test": "vitest",
+    "prepublishOnly": "nr build",
+    "release": "bumpp && npm publish",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^0.25.2",
+    "@types/node": "^18.0.0",
+    "bumpp": "^8.2.1",
+    "eslint": "^8.18.0",
+    "esno": "^0.16.3",
+    "tsup": "^6.1.2",
+    "typescript": "^4.7.4",
+    "vitest": "^0.16.0"
+  }
+}
