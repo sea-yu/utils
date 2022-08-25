@@ -6,7 +6,7 @@
     "allowJs": false,
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "removeComments": true,
+    "removeComments": false,
     "paths": {
       "@/*": ["src/*"]
     }

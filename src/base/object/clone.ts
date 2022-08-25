@@ -23,13 +23,13 @@ export function deepClone<T extends Array<T> | any> (target: T, map: Map<any, an
     }
     return res
   }
-  const newObj = Object.create(null)
+  const newObj = Object.create(Object.getPrototypeOf(target))
   map.set(target, newObj)
   Object.keys(target as Record<string, any>).forEach(key => {
     const t = (target as Record<string, any>)[key]
     if (typeof t === 'object') {
       newObj[key] = deepClone(t, map)
-    } else{
+    } else {
       newObj[key] = t
     }
   })
