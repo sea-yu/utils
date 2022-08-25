@@ -1,7 +1,7 @@
 {
   "name": "@seayu/utils",
   "type": "module",
-  "version": "0.0.0",
+  "version": "0.0.2",
   "description": "some of JavaScript / TypeScript utils",
   "author": "seayu",
   "license": "MIT",
