@@ -24,3 +24,27 @@ export function randomBoolean(probability = 0.5):boolean {
   if (probability <= 0) return false
   return Math.random() <= probability
 }
+
+/**
+ * 生成随机数组
+ * @param size 数组大小
+ * @param randomFn 随机生成函数
+ * @returns 生成的数据东西
+ */
+export function randomArray<T = number>(size: number, randomFn: () => T): T[] {
+  if (size <= 0) return []
+  return Array.from({ length: size }, randomFn)
+}
+
+
+/**
+ * 生成随机数数组
+ * @param size 随机数个数
+ * @param min 随机数最小值
+ * @param max 随机数最大值
+ * @param precision 随机数经度(默认0)
+ * @returns size大小的随机数数组
+ */
+export function randomArrayNumber(size: number, min?: number, max?: number, precision?: number) {
+  return randomArray(size, () => random(min, max, precision))
+}
