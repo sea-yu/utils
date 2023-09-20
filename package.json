@@ -9,18 +9,28 @@
     "type": "git",
     "url": "git+https://github.com/sea-yu/utils.git"
   },
+  "homepage": "https://github.com/sea-yu/utils",
   "bugs": "https://github.com/sea-yu/utils/issues",
   "keywords": [],
+  "sideEffects": false,
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "require": "./dist/index.cjs",
-      "import": "./dist/index.js"
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
     }
   },
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./dist/*",
+        "./dist/index.d.ts"
+      ]
+    }
+  },
   "files": [
     "dist"
   ],
@@ -37,14 +47,14 @@
     "up": "taze major -I"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^0.36.0",
-    "@types/node": "^18.15.0",
-    "bumpp": "^9.0.0",
-    "eslint": "^8.36.0",
-    "esno": "^0.16.3",
-    "taze": "^0.9.0",
-    "tsup": "^6.6.3",
-    "typescript": "^4.9.5",
-    "vitest": "^0.29.2"
+    "@antfu/eslint-config": "^0.43.0",
+    "@types/node": "^18.17.17",
+    "bumpp": "^9.2.0",
+    "eslint": "^8.49.0",
+    "esno": "^0.17.0",
+    "taze": "^0.11.2",
+    "tsup": "^7.2.0",
+    "typescript": "^5.2.2",
+    "vitest": "^0.34.4"
   }
 }

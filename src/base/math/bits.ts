@@ -6,9 +6,9 @@
  */
 export function getBit(num: number, pos: number): 1 | 0 {
   if (pos < 0 || pos > 30) {
-    return 0;
+    return 0
   }
-  return num & (1 << pos) ? 1 : 0;
+  return num & (1 << pos) ? 1 : 0
 }
 
 /**
@@ -17,10 +17,10 @@ export function getBit(num: number, pos: number): 1 | 0 {
  * @returns 最后一个bit位位置
  */
 export function getLastBitPos(num: number): number {
-  let pos = 0;
+  let pos = 0
   while (num) {
-    num >>= 1;
-    pos++;
+    num >>= 1
+    pos++
   }
-  return pos;
+  return pos
 }

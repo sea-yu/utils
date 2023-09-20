@@ -6,7 +6,9 @@
  * @returns 值
  */
 export function boundLimit(floor: number, celi: number, value: number): number {
-  if (value < floor) return floor
-  if (value > celi) return celi
+  if (value < floor) 
+    return floor
+  if (value > celi) 
+    return celi
   return value
 }

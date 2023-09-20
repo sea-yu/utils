@@ -4,7 +4,7 @@
  * @param map 防止循环拷贝
  * @returns 新的对象
  */
-export function deepClone<T extends Array<T> | any> (target: T, map: Map<any, any> = new Map()) : T | T[] {
+export function deepClone<T extends Array<T> | any>(target: T, map: Map<any, any> = new Map()): T | T[] {
   if (typeof target !== 'object') {
     return target
   }
@@ -17,7 +17,8 @@ export function deepClone<T extends Array<T> | any> (target: T, map: Map<any, an
     for (const item of target) {
       if (typeof item === 'object') {
         res.push(deepClone(item, map))
-      } else{
+      }
+      else {
         res.push(item)
       }
     }
@@ -25,11 +26,12 @@ export function deepClone<T extends Array<T> | any> (target: T, map: Map<any, an
   }
   const newObj = Object.create(Object.getPrototypeOf(target))
   map.set(target, newObj)
-  Object.keys(target as Record<string, any>).forEach(key => {
+  Object.keys(target as Record<string, any>).forEach((key) => {
     const t = (target as Record<string, any>)[key]
     if (typeof t === 'object') {
       newObj[key] = deepClone(t, map)
-    } else {
+    }
+    else {
       newObj[key] = t
     }
   })

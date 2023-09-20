@@ -15,3 +15,18 @@ export function qpow(base: number, mod: number): number {
   }
   return res
 }
+
+/**
+ * 计算两个数的最大公约数
+ * @param a 第一个数字
+ * @param b 第二个数字
+ * @returns 最大公约数
+ */
+export function gcd(a: number, b: number) {
+  while (b !== 0) {
+    const remainder = a % b;
+    a = b;
+    b = remainder;
+  }
+  return a;
+}

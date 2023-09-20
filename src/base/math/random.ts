@@ -7,10 +7,10 @@
  * @param precision 精度(0-20) default 0
  * @returns 随机数,如果最小值大于最大值返回0
  */
-export function random(min = 0, max = 100, precision = 0):number {
-  if (min > max) return 0
-  const generateNumber = Math.random() * (max - min) + min
-  return Number(generateNumber.toFixed(precision))
+export function random(min = 0, max = 100, precision = 0): number {
+  if (min > max) return 0;
+  const generateNumber = Math.random() * (max - min) + min;
+  return Number(generateNumber.toFixed(precision));
 }
 
 /**
@@ -19,10 +19,10 @@ export function random(min = 0, max = 100, precision = 0):number {
  * @param probability 概率,默认0.5
  * @returns
  */
-export function randomBoolean(probability = 0.5):boolean {
-  if (probability >= 1) return true
-  if (probability <= 0) return false
-  return Math.random() <= probability
+export function randomBoolean(probability = 0.5): boolean {
+  if (probability >= 1) return true;
+  if (probability <= 0) return false;
+  return Math.random() <= probability;
 }
 
 /**
@@ -32,10 +32,9 @@ export function randomBoolean(probability = 0.5):boolean {
  * @returns 生成的数据东西
  */
 export function randomArray<T = number>(size: number, randomFn: () => T): T[] {
-  if (size <= 0) return []
-  return Array.from({ length: size }, randomFn)
+  if (size <= 0) return [];
+  return Array.from({ length: size }, randomFn);
 }
-
 
 /**
  * 生成随机数数组
@@ -45,6 +44,11 @@ export function randomArray<T = number>(size: number, randomFn: () => T): T[] {
  * @param precision 随机数经度(默认0)
  * @returns size大小的随机数数组
  */
-export function randomArrayNumber(size: number, min?: number, max?: number, precision?: number) {
-  return randomArray(size, () => random(min, max, precision))
+export function randomArrayNumber(
+  size: number,
+  min?: number,
+  max?: number,
+  precision?: number
+) {
+  return randomArray(size, () => random(min, max, precision));
 }
